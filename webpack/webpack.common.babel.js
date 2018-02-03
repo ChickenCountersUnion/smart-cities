@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import CleanupPlugin from 'webpack-cleanup-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 
-export const srcPath = path.join(__dirname, '../src/client');
+export const srcPath = path.join(__dirname, '../src');
 export const distPath = path.join(__dirname, '../dist');
 
 const commonConfig = {
