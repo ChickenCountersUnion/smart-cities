@@ -7,8 +7,8 @@ import commonConfig from './webpack.common.babel';
 
 export default merge(commonConfig, {
   output: {
-    filename: '[name]-bundle.[chunkhash].js',
-    chunkFilename: '[name]-chunk.[chunkhash].js',
+    filename: '[name]-bundle.js',
+    chunkFilename: '[name]-chunk.js',
   },
 
   module: {
