@@ -12,7 +12,14 @@ module.exports.fuzzySearch = (req, res) => {
 
   axios.get(requestURL)
     .then(result => {
-      
+      var places = result.map((address) => {
+        return {
+          freeformAddress: address.freeformAddress,
+          lat: address.position.lat,
+          lon: address.position.lon
+        };
+      });
+      res.status(200).send(places);
     })
     .catch(err => {
       res.status(400).send(err);
