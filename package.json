@@ -4,6 +4,7 @@
   "description": "Building an on demand garbage collection portal and an application which calculates the most optimal routes for garbage collection trucks are the challenge here!",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack/webpack.prod.babel.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.babel.js"
@@ -24,6 +25,7 @@
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^5.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "moment": "^2.20.1",
     "mongodb": "^3.0.2",
