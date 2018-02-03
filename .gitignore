@@ -1,0 +1,19 @@
+# OSX 
+.DS_Store
+Thumbs.db
+
+# Compiled
+build/ 
+dist/ 
+
+# Dependencies 
+node_modules/ 
+bower_components/ 
+package-lock.json
+yarn.lock
+
+# Editor
+.vscode/ 
+
+# API 
+.env
