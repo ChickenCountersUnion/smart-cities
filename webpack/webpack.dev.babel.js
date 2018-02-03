@@ -38,7 +38,7 @@ export default merge(commonConfig, {
     new HtmlWebpackPlugin({
       inject: false,
       template: require('html-webpack-template'),
-      title: 'Portfolio',
+      title: 'Smart Cities',
       appMountId: 'app',
       links: [
         'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css',
