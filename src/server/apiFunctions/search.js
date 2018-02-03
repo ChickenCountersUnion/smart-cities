@@ -1,5 +1,5 @@
 const axios = require('axios');
-const apiKey = '66XEq8Vxes74mNn2SLPNAlUvNpTBCFLG';
+const apiKey = process.env.tomtomapikey;
 const typeahead = true;
 const limit = 5;
 const countrySet = 'US';
@@ -22,7 +22,8 @@ module.exports = (req, res) => {
       res.status(200).send(places);
     })
     .catch(err => {
+      console.log(err);
       res.status(400).send(err);
-    });
+    })
 
 }
