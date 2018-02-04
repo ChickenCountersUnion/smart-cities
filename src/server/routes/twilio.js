@@ -1,7 +1,6 @@
-const accountSid = process.env.accountTestSid;
-const authToken = process.env.authTestToken;
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken);
-const axios = require('axios')
 
 module.exports.sendMessage = (message, toNumber) => {
   client.messages.create({
