@@ -9,7 +9,10 @@ const About = () => {
   //     </Grid.Column>
   //   </Grid.Row>
   // </Grid>
-  <div>in progress</div>
+  return (
+    <div>about</div>
+  )
+  
 }
 
 export default About; 

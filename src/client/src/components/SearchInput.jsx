@@ -46,18 +46,6 @@ class SearchInput extends React.Component {
   resetComponent = () => {
     this.setState({ isLoading: false, result: [], value: '' })
   }
-  
-  handleResultSelect = (e, { result }) => {
-    let user = {
-      title: result.title, 
-      lat: result.lat, 
-      lon: result.lon
-    }; 
-    this.setState({
-      input: user
-    })
-
-  }
 
   handleSearchChange = (e, { value }) => {
     axios.get(`/search?query=${value}`)
@@ -66,7 +54,8 @@ class SearchInput extends React.Component {
         result: res
       })
     })
-    this.setState({ isLoading: true, value })
+    // this.setState({ isLoading: true, value })
+
   }
 
   render() {
@@ -76,15 +65,17 @@ class SearchInput extends React.Component {
           <Search
           input={{fluid: true}}
           placeholder='Enter your address'
-          onResultSelect={this.handleResultSelect}
+          onResultSelect={this.props.handleResultSelect}
           onSearchChange={this.handleSearchChange}
-          results={this.state.results}
+          results={this.results}
           >  
           </Search>
         </Grid.Column>
       </Grid>
     ); 
   }
+    
+  
   
 }
 
