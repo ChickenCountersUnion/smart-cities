@@ -1,6 +1,7 @@
 const { Router } = require('express');
-const twilio = require('./twilio');
+// const twilio = require('./twilio');
 const search = require('../apiFunctions/search');
+const routing = require('../apiFunctions/routing.js');
 
 const router = new Router();
 
@@ -15,5 +16,6 @@ router.post('/notification', (req, res) => {
 })
 
 router.get('/search', search);
+router.get('/routing', routing);
 
 module.exports = router;
