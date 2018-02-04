@@ -1,7 +1,11 @@
 const { Router } = require('express');
-const twilio = require('./twilio');
+// const twilio = require('./twilio');
 const search = require('../apiFunctions/search');
+<<<<<<< HEAD
 const db = require('../../db');
+=======
+const routing = require('../apiFunctions/routing.js');
+>>>>>>> 3cf6af80d95580d818f70349aa0a1e781467ed46
 
 const router = new Router();
 
@@ -16,6 +20,7 @@ router.post('/notification', (req, res) => {
 })
 
 router.get('/search', search);
+router.get('/routing', routing);
 
 router.post('/location', db.savePickup);
 router.post('/pickup', db.pickUp);
