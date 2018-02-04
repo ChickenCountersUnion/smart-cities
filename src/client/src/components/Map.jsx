@@ -4,7 +4,9 @@ class Map extends Component {
   componentDidMount() {
     this.map = tomtom.map('map', {
       key: process.env.tomtomapikey,
-    }).setView([37.7836966,-122.4111551], 14);
+      center: [37.7836966, -122.4111551],
+      zoom: 12,
+    });
   }
 
   render() {
