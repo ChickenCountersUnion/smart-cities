@@ -42,6 +42,11 @@ export default merge(commonConfig, {
       appMountId: 'app',
       links: [
         'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css',
+        'http://api.tomtom.com/maps-sdk-js/4.15.0/examples/sdk/map.css',
+        'http://api.tomtom.com/maps-sdk-js/4.15.0/examples/elements.css',
+      ],
+      scripts: [
+        'http://api.tomtom.com/maps-sdk-js/4.15.0/examples/sdk/tomtom.min.js',
       ],
     }),
   ],

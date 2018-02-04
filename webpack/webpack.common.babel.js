@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import path from 'path';
 import webpack from 'webpack';
 import CleanupPlugin from 'webpack-cleanup-plugin';
@@ -43,6 +45,7 @@ const commonConfig = {
     // new ManifestPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.tomtomapikey': JSON.stringify(process.env.tomtomapikey),
     }),
   ],
 };
