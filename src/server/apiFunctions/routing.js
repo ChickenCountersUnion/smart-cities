@@ -1,34 +1,42 @@
 const axios = require('axios');
 const apiKey = process.env.tomtomapikey;
+const alternativeType = 'betterRoute';
+const instructionsType = 'text';
+const computeBestOrder = true;
+const routeRepresentation = 'polyline';
 
 
 module.exports = (req, res) => {
   var {query} = req.query;
-  var locations = '';
+  var locations = '52.50931,13.42936:52.50274,13.43872';
 
-  var requestURL = `
-  https://api.tomtom.com/routing/1/calculateRoute/${location}[/<contentType>]?
-    key=<apiKey>
-    [&callback=<callback>]
-    [&maxAlternatives=<alternativeRoutes>]
-    [&alternativeType=<alternativeType>]
-    [&minDeviationDistance=<integer>]
-    [&minDeviationTime=<integer>]
-    [&instructionsType=<instructionsType>]
-    [&language=<language>]
-    [&computeBestOrder=<boolean>]
-    [&routeRepresentation=<routeRepresentation>]
-    [&computeTravelTimeFor=<trafficTypes>]
-    [&vehicleHeading=<integer>]
-    [&sectionType=<sectionType>]
-    [&report=effectiveSettings]
-    [&departAt=<time>]
-    [&arriveAt=<time>]
-    [&routeType=<routeType>]
-    [&traffic=<boolean>]
-    [&avoid=<avoidType>]
-    [&travelMode=<travelMode>]
-  `;
+  // driver location as starting point
+  var driverLatLon = {
+    lat: 37.773972, 
+    lon: -122.431297
+  };
+
+  var destinationLatLon = {
+    lat: 37.773972, 
+    lon: -122.431297
+  };
+
+  var driverLatLonString = createStringFromLatLon(driverLatLon);
+  var destinationLatLonString = createStringFromLatLon(destinationLatLon);
+  
+  // remaining location , get from db
+  
+  //user that just submitted location get new routes
+
+  //user that did not just submit poll from server
+
+
+  var requestURL = `https://api.tomtom.com/routing/1/calculateRoute/${location}?
+    key=${apiKey}
+    &alternativeType=${alternativeType}
+    &instructionsType=${instructionsType}
+    &computeBestOrder=${computeBestOrder}
+    &routeRepresentation=${routeRepresentation}`;
 
   axios.get(requestURL)
     .then(result => {
@@ -47,3 +55,7 @@ module.exports = (req, res) => {
     })
 
 }
+
+const createStringFromLatLon = (locationObject) => {
+  return `${locationObject.lat.toString()},${locationObject.lon.toString()}`;
+};
